@@ -1,0 +1,1 @@
+export const SET_ADX_CONTACT = 'SET_ADX_CONTACT'

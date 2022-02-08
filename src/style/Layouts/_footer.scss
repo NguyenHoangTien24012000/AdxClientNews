@@ -1,0 +1,123 @@
+
+.footer {
+    background-color: $color-gray-0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    .footer-content{
+        width: 82%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        // align-items: center;
+    }
+    .footer-logo{
+        width: 20%;
+        .logo-img{
+            width: 100px;
+        }
+    }
+    .logo-text {
+        @include styleText($color-white-0, $fs-0 - 3, $fw-0);
+        margin-top: 14px;
+    }
+    .logo-bottom {
+        margin-top: 4px;
+        display: flex;
+        // width: 50%;
+        align-items: center;
+        .logo-bottom-img{
+            width: 100%;
+        }
+    }
+    .logo-bottom-left {
+      
+        margin-right: 8px;
+      
+    }
+  
+    .footer-contact {
+        width: 30%;
+        h3 {
+            font-family: "Encode Sans", sans-serif;
+            line-height: 25px;
+            @include styleText($color-white-0, $fs-1 - 4, $fw-1 );
+            margin-bottom: 14px;
+        }
+    }
+    .detail-contact {
+        display: flex;
+        margin-bottom: 10px;
+        img {
+            width: 11px;
+            height: 11px;
+        }
+        p {
+            font-family: "Encode Sans", sans-serif;
+            line-height: 12px;
+            @include styleText($color-white-0, $fs-0 - 3, $fw-1);
+            margin-left: 7px;
+        }
+    }
+    .social-media {
+        display: flex;
+        margin-top: 4px;
+    }
+    .logo-contact  {
+        text-align: center;
+        width: 21px;
+        height: 21px;
+        line-height: 20px;
+        background-color: $color-blue-1;
+        border-radius: 50%;
+        &.space-right{
+            margin-right: 5px;
+        }
+    }
+    .logo-zalo {
+        background-color: $color-white-0;
+    }
+    .footer-address {
+        width: 50%;
+    }
+    .address-shared {
+        margin-bottom: 15px;
+        h3 {
+            font-family: "Encode Sans", sans-serif;
+            line-height: 25px;
+            @include styleText($color-white-0, $fs-1 - 4, $fw-1);
+            margin-bottom: 2px;
+        }
+    }
+    .address-detail {
+        display: flex;
+        // align-items: center;
+        // display: j;
+        img {
+            width: 12px;
+            margin-right: 6px;
+        }
+        p {
+            font-family: "Encode Sans", sans-serif;
+            @include styleText($color-white-0, $fs-0 - 3, $fw-1);
+            margin-top: 4px;
+        }
+    }
+    
+    @include responsive("medium"){
+        .footer-content{
+            width: 80%;
+            flex-wrap: wrap;
+        }
+        .footer-logo{
+            width: 50%;
+            margin-bottom: 20px;
+        }
+        .footer-contact{
+            width: 50%;
+            margin-top: 10px;
+        }
+        .footer-address{
+            width: 100%;
+        }
+    }
+}

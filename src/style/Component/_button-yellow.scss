@@ -1,0 +1,41 @@
+.button-yellow {
+    padding: 9px 16px;
+    border: none;
+    color: $color-white-0;
+    border-radius: 4px;
+    font-size: $fs-0;
+    background-color: $color-yellow-1;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+    &.space-right {
+        margin-right: 16px;
+    }
+    .button-text {
+        padding-right: 6px;
+        color: white;
+        text-decoration: none;
+    }
+    @include responsive("screen-2") {
+        padding: 8px 9px;
+        font-size: $fs-0 - 2;
+        &.space-right {
+            margin-right: 10px;
+        }
+    }
+    @include responsive("extra-large") {
+        padding: 6px 7px;
+        font-size: $fs-0 - 4;
+        &.space-right {
+            margin-right: 6px;
+        }
+    }
+    @include responsive("large") {
+        padding: 4px 5px;
+        font-size: $fs-0 - 6;
+        &.space-right {
+            margin-right: 5px;
+        }
+    }
+}
