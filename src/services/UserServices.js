@@ -11,6 +11,9 @@ class UserServices extends BaseServices{
     checkToken = () =>{
         return this.post(`/admin/checkToken`)
     }
+    changeUser = (thongTinNguoiDung) =>{
+        return this.post(`/admin/user/changeUser`, thongTinNguoiDung)
+    }
 }
 
 export const userServices = new UserServices();

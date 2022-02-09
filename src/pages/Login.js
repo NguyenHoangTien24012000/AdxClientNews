@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react'
 import {useDispatch} from 'react-redux';
 import { dangNhapAction } from '../redux/actions/UserAction';
 export default function Login(props) {
-    const [user, setUser] = useState({user : '', password_login : ''});
-    const [error, setError] = useState({user : '', password_login : ''});
+    const [user, setUser] = useState({email : '', password_login : ''});
+    const [error, setError] = useState({email : '', password_login : ''});
     
     const dispatch = useDispatch();
     
@@ -23,9 +23,8 @@ export default function Login(props) {
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(!error.user && !error.password_login ){
+        if(!error.email && !error.password_login ){
             dispatch(dangNhapAction(user, history));
-
         }
     }
     return (
@@ -40,11 +39,11 @@ export default function Login(props) {
                             </div>
                             <div className="mb-3" >
                                 <input type="text" className="form-control" 
-                                    placeholder="User Name" name="user" value={user.user} onChange={handleChange}/>
-                                    <div><p className='text-danger'>{error.user}</p></div>
+                                    placeholder="email Name" name="email" value={user.email} onChange={handleChange}/>
+                                    <div><p className='text-danger'>{error.email}</p></div>
                             </div>
                             <div className="mb-3">
-                                <input type="password_login" className="form-control" name="password_login" placeholder="password_login" value={user.password_login} onChange={handleChange} />
+                                <input type="password" className="form-control" name="password_login" placeholder="password_login" value={user.password_login} onChange={handleChange} />
                                 <div><p className='text-danger'>{error.password_login}</p></div>
                             </div>
                             <div className="text-center"><button type="submit" className="btn btn-color px-5 mb-5 w-100">Login</button></div>

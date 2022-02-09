@@ -14,6 +14,7 @@ import AdxHomePageTamplate from './templates/AdxHomePageTamplate';
 import ContentAdxHomePage from './components/ContentAdxHomePage';
 import ContentAdxHomePageLeft from './components/ContentAdxHomePageLeft';
 import AdminAdxContact from './pages/AdminAdxContact';
+import AdminUser from './pages/AdminUser';
 
 
 export const history = createBrowserHistory();
@@ -24,6 +25,7 @@ function App() {
         <BrowserRouter>
             <Switch  history = {history}>
                 <Route exact path="/login" component={Login}></Route>
+                <AdminTemplate exact path = "/admin/userAdmin" Component = {AdminUser} />
                 <AdminTemplate exact path="/admin" Component = {AdminPage} />
                 <AdminTemplate exact path= "/admin/adxContact" Component={AdminAdxContact} />
                 <AdminTemplate exact path="/admin/:ADXType" Component = {AdminAdxType} />

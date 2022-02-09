@@ -1,7 +1,8 @@
 import { userServices } from "../../services/UserServices";
 import { ACCESS_TOKEN } from "../../util/config";
 import { createBrowserHistory } from 'history';
-let history = createBrowserHistory();
+import { UPDATE_USER } from "../types/UserType";
+
 
 export const dangNhapAction = (thongTinNguoiDung, history) => {
 
@@ -11,6 +12,10 @@ export const dangNhapAction = (thongTinNguoiDung, history) => {
         try {
             const result = await userServices.dangNhap(thongTinNguoiDung);
             if (result.status === 200) {
+                dispatch({
+                    type : UPDATE_USER,
+                    thongTinNguoiDung : thongTinNguoiDung
+                })
                 sessionStorage.setItem(ACCESS_TOKEN, result.data.token);
                 history.push('/admin');
             }
@@ -23,10 +28,20 @@ export const dangNhapAction = (thongTinNguoiDung, history) => {
 
 
 
-// export const checkTokenAction = () => {
-//     // console.log(resProps)
-//     return 
-// }
+export const changeUserAction = (thongTinNguoiDung, history) => {
+    return async dispatch => {
+        try {
+            const result = await userServices.changeUser(thongTinNguoiDung);
+            if(result.status === 200){
+                alert("Change User Success!!")
+                sessionStorage.setItem(ACCESS_TOKEN, result.data.token);
+                history.push('/login')
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
 
 
 
