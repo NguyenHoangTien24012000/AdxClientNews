@@ -11,6 +11,7 @@ export default function AdminAdxContact() {
 
     const [edit, setEdit] = useState(false)
 
+
     useEffect(() => {
         dispatch(getAllAdxContactAction())
     }, [])
@@ -117,8 +118,11 @@ export default function AdminAdxContact() {
                             )}
                         </div>
                     </div>
-                   <button style={{display : `${edit ? '' : 'none'}`}} onClick={()=> setEdit(false)} type="submit" className="btn btn-primary mb-2">Update</button>
+                   <button style={{display : `${edit ? '' : 'none'}`}} onClick={()=> {
+                       setEdit(false)
+                       }} type="submit" className="btn btn-primary mb-2">Update</button>
                 </form>
+               
                 {edit ? '' :<button  className="btn btn-primary mb-5" onClick={() => setEdit(true)}>Edit</button>}
             </div>
         </div>

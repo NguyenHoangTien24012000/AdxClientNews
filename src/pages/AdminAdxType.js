@@ -7,11 +7,9 @@ import { deleteAdxTypeAction, getADXGroupTypeAction, getItemTypeAdxAction } from
 export default function AdminAdxType(props) {
     const dispatch = useDispatch();
     const { adxGroupType } = useSelector(state => state.AdxTypeReducer)
-
+    
     const { ADXType } = props.match.params;
     
-    
-
     useEffect(() => {
         dispatch(getADXGroupTypeAction(ADXType));
     }, [])
@@ -31,7 +29,7 @@ export default function AdminAdxType(props) {
                         <div className="modal-dialog modal-dialog-centered" role="document">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="exampleModalLongTitle">Do you want to delete?</h5>
+                                    <h5 className="modal-title" id="exampleModalLongTitle">Do you want to delete {item.name_adx}?</h5>
                                     <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>

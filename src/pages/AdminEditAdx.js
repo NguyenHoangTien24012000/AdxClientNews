@@ -112,7 +112,7 @@ export default function AdminEditAdx(props) {
                         </div>
                         <div className='row'>
                             <div className='mb-3 col-6'>
-                                <label className="form-label">Name AdxDemo</label>
+                                <label className="form-label ">Name AdxDemo</label>
                                 <input type="text" className="form-control" name='name_demo' value={formik.values.name_demo} onChange={formik.handleChange} />
                                 {formik.errors.name_demo && (
                                     <p className='text-danger'>{formik.errors.name_demo}</p>
@@ -162,7 +162,7 @@ export default function AdminEditAdx(props) {
                     </form>
                 </div>
             </div>
-            <h5>ADX Demo</h5>
+            <h5 className='text-primary '>ADX Demo</h5>
 
             <div><table className="table">
                 <thead>

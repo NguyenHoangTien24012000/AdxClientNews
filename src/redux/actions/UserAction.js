@@ -34,7 +34,7 @@ export const changeUserAction = (thongTinNguoiDung, history) => {
             const result = await userServices.changeUser(thongTinNguoiDung);
             if(result.status === 200){
                 alert("Change User Success!!")
-                sessionStorage.setItem(ACCESS_TOKEN, result.data.token);
+                sessionStorage.removeItem(ACCESS_TOKEN);
                 history.push('/login')
             }
         } catch (error) {
