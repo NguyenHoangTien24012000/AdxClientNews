@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import * as Yup from "yup";
-import {  getDemoAction, upDateDemoAction } from '../redux/actions/AdxDemoAction';
+import { getDemoAction, upDateDemoAction } from '../redux/actions/AdxDemoAction';
 
 export default function AdminEditAdxDemo(props) {
 
@@ -13,10 +13,10 @@ export default function AdminEditAdxDemo(props) {
     const [file, setFile] = useState({ fileRender: '' });
 
     useEffect(() => {
-        dispatch(getDemoAction(idADXDemo))        
+        dispatch(getDemoAction(idADXDemo))
     }, [])
 
-    const {demo} = useSelector(state => state.AdxDemoReducer)
+    const { demo } = useSelector(state => state.AdxDemoReducer)
     // console.log(demo)
     // const {id_demo, image, link_button1, link_button2, name_demo} = demo
 
@@ -39,7 +39,7 @@ export default function AdminEditAdxDemo(props) {
             for (let key in values) {
                 formData.append(key, values[key])
             }
-            dispatch(upDateDemoAction(formData, idADXDemo ,props.history))
+            dispatch(upDateDemoAction(formData, idADXDemo, props.history))
         },
     });
 
@@ -67,9 +67,9 @@ export default function AdminEditAdxDemo(props) {
                             <div className="mb-3 col-10">
                                 <label className="form-label">Name Demo</label>
                                 <input type="text" className="form-control" name='name_demo' value={formik.values.name_demo} onChange={formik.handleChange} />
-                                {/* {formik.errors.name_adx && (
-                                    <p className='text-danger'>{formik.errors.name_adx}</p>
-                                )} */}
+                                {formik.errors.name_demo && (
+                                    <p className='text-danger'>{formik.errors.name_demo}</p>
+                                )}
                             </div>
                         </div>
                         <div className='row'>
@@ -87,16 +87,16 @@ export default function AdminEditAdxDemo(props) {
                             <div className='mb-3 col-6'>
                                 <label className="form-label">Link button 1</label>
                                 <input type="text" className="form-control" name='link_button1' value={formik.values.link_button1} onChange={formik.handleChange} />
-                                {/* {formik.errors.name_demo && (
-                                    <p className='text-danger'>{formik.errors.name_demo}</p>
-                                )} */}
+                                {formik.errors.link_button1 && (
+                                    <p className='text-danger'>{formik.errors.link_button1}</p>
+                                )}
                             </div>
                             <div className='mb-3 col-6'>
                                 <label className="form-label">Link button 2</label>
                                 <input type="text" className="form-control" name='link_button2' value={formik.values.link_button2} onChange={formik.handleChange} />
-                                {/* {formik.errors.posti && (
-                                    <p className='text-danger'>{formik.errors.posti}</p>
-                                )} */}
+                                {formik.errors.link_button2 && (
+                                    <p className='text-danger'>{formik.errors.link_button2}</p>
+                                )}
                             </div>
                         </div>
 
